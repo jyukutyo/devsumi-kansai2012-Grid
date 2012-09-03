@@ -30,7 +30,7 @@ public class TestShare {
             capability = DesiredCapabilities.firefox();
             capability.setBrowserName("Firefox");
             capability.setPlatform(Platform.MAC);
-        } else if (browser.equalsIgnoreCase("iexplore")) {
+        } else if (browser.equalsIgnoreCase("ie")) {
             // capability.setCapability("jenkins.label", "windows");
             capability = DesiredCapabilities.internetExplorer();
             capability.setBrowserName("IE");
