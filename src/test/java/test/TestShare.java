@@ -29,11 +29,13 @@ public class TestShare {
             capability = DesiredCapabilities.firefox();
             capability.setCapability("jenkins.label", "mac");
             capability.setBrowserName("Firefox");
+            capability.setVersion("");
         } else if (browser.equalsIgnoreCase("ie")) {
             capability = DesiredCapabilities.internetExplorer();
             capability.setCapability("jenkins.label", "windows");
             capability = DesiredCapabilities.internetExplorer();
             capability.setBrowserName("IE");
+            capability.setVersion("");
         }
         driver = new RemoteWebDriver(new URL("http://jyukutyomac.local:4444/wd/hub"), capability);
     }
