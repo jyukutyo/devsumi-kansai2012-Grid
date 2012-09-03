@@ -29,7 +29,7 @@ public class TestShare {
             capability = DesiredCapabilities.firefox();
             capability.setCapability("jenkins.label", "mac");
             capability.setBrowserName("Firefox");
-            capability.setVersion("");
+            capability.setVersion("14");
         } else if (browser.equalsIgnoreCase("ie")) {
             capability = DesiredCapabilities.internetExplorer();
             capability.setCapability("jenkins.label", "windows");
