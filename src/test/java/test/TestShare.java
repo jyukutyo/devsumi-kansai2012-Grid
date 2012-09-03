@@ -30,11 +30,12 @@ public class TestShare {
             capability.setCapability("jenkins.label", "mac");
             capability.setBrowserName("Firefox");
         } else if (browser.equalsIgnoreCase("ie")) {
+            capability = DesiredCapabilities.internetExplorer();
             capability.setCapability("jenkins.label", "windows");
             capability = DesiredCapabilities.internetExplorer();
             capability.setBrowserName("IE");
         }
-        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
+        driver = new RemoteWebDriver(new URL("http://jenkins:4444/wd/hub"), capability);
     }
 
     @AfterTest
