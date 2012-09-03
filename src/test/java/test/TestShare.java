@@ -35,7 +35,7 @@ public class TestShare {
             capability = DesiredCapabilities.internetExplorer();
             capability.setBrowserName("IE");
         }
-        driver = new RemoteWebDriver(new URL("http://jenkins:4444/wd/hub"), capability);
+        driver = new RemoteWebDriver(new URL("http://jyukutyomac.local:4444/wd/hub"), capability);
     }
 
     @AfterTest
