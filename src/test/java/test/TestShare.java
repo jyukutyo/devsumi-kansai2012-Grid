@@ -8,7 +8,6 @@ package test;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -28,13 +27,12 @@ public class TestShare {
 
         if (browser.equalsIgnoreCase("firefox")) {
             capability = DesiredCapabilities.firefox();
+            capability.setCapability("jenkins.label", "mac");
             capability.setBrowserName("Firefox");
-            capability.setPlatform(Platform.MAC);
         } else if (browser.equalsIgnoreCase("ie")) {
-            // capability.setCapability("jenkins.label", "windows");
+            capability.setCapability("jenkins.label", "windows");
             capability = DesiredCapabilities.internetExplorer();
             capability.setBrowserName("IE");
-            capability.setPlatform(Platform.WINDOWS);
         }
         driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
     }
