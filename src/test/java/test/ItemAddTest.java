@@ -27,7 +27,7 @@ public class ItemAddTest extends AfterLoginTest {
         description.sendKeys("Javaのマスコットキャラクター");
 
         WebElement file = driver.findElement(By.xpath("/html/body/form/div/table/tbody/tr[3]/td[2]/input"));
-        file.sendKeys("/Users/jyukutyo/Downloads/duke1.jpeg");
+        file.sendKeys("duke1.jpeg");
 
         WebElement registerButton = driver.findElement(By.xpath("/html/body/form/div/input"));
         registerButton.click();
