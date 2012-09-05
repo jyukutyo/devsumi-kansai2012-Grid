@@ -14,7 +14,7 @@ public class ItemDeleteTest extends AfterLoginTest {
 
     @BeforeMethod
     public void 削除画面に行き_商品削除リンクをクリックする() {
-        driver.get("http://localhost:8080/item/index.html");
+        driver.get("http://jyukutyomac.local:8080/item/index.html");
         WebElement deleteLink = driver.findElement(By.linkText("商品削除"));
         deleteLink.click();
     }

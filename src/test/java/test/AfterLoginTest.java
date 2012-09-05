@@ -15,7 +15,7 @@ public class AfterLoginTest {
 
     @BeforeClass
     public void ログインする() {
-        driver.get("http://localhost:8080/login.html");
+        driver.get("http://jyukutyomac.local:8080/login.html");
         WebElement userId = driver.findElement(By.name("j_username"));
         WebElement password = driver.findElement(By.name("j_password"));
         WebElement loginButton = driver.findElement(By.xpath("//input[@type='submit']"));

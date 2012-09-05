@@ -22,7 +22,7 @@ public class LoginTest {
 
     @BeforeMethod
     public void toLoginPage() {
-        driver.get("http://localhost:8080/login.html");
+        driver.get("http://jyukutyomac.local:8080/login.html");
     }
 
     @Test

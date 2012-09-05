@@ -12,7 +12,7 @@ public class ItemAddTest extends AfterLoginTest {
 
     @BeforeMethod
     public void 商品作成画面に行く() {
-        driver.get("http://localhost:8080/item/create.html");
+        driver.get("http://jyukutyomac.local:8080/item/create.html");
     }
 
     @Test(groups = "register")
