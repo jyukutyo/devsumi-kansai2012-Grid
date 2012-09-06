@@ -8,7 +8,6 @@ package test;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -28,7 +27,7 @@ public class TestShare {
 
         if (browser.equalsIgnoreCase("firefox")) {
             capability = DesiredCapabilities.firefox();
-            capability.setPlatform(Platform.MAC);
+            capability.setCapability("jenkins.nodeName","(master)");
         } else if (browser.equalsIgnoreCase("ie")) {
             capability = DesiredCapabilities.internetExplorer();
         }
