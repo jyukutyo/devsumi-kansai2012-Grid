@@ -4,6 +4,8 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -40,7 +42,9 @@ public class ItemDeleteTest extends AfterLoginTest {
         Alert alert = driver.switchTo().alert();
         alert.accept();
 
-        Assert.assertEquals(driver.getTitle(), "マスタ管理 - 商品一覧画面");
+        final int timeoutInSeconds = 3;
+        WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
+        wait.until(ExpectedConditions.titleIs("マスタ管理 - 商品一覧画面"));
 
         try {
             driver.findElement(By.xpath("/html/body/form/div/table/tbody/tr/td[.='" + nameValue + "']"));
