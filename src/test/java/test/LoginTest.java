@@ -9,14 +9,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static test.TestShare.*;
+import static test.TestShare.driver;
 
 public class LoginTest {
 
@@ -57,7 +59,13 @@ public class LoginTest {
         } catch (NoSuchElementException e) {
             Assert.fail("エラーメッセージの要素がありません");
         }
-        File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
+        // RemoteWebDriverはTakesScreenshotを実装していない。
+        // もしドライバがスクリーンショットを撮れる場合、
+        // AugmenterがTakesScreenshotのメソッドをインスタンスに追加する。
+        WebDriver augmentedDriver = new Augmenter().augment(driver);
+        File file = ((TakesScreenshot)augmentedDriver).
+                getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(file, new File("/tmp/" + method.getName() + ".png"));
     }
 
